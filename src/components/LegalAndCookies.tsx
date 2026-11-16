@@ -261,7 +261,7 @@ export function LegalModal({
                   rel="noopener noreferrer"
                   className="font-semibold text-[#D4B45A] underline"
                 >
-                  lumar.email
+                  lumar.agency
                 </a>
                 .
               </p>

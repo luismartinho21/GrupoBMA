@@ -84,7 +84,7 @@ export function Footer({ onOpenLegal, onOpenCookies }: FooterProps) {
               rel="noopener noreferrer"
               className="font-semibold text-[#E5B869] underline decoration-[#E5B869]/40 underline-offset-4 transition-colors hover:text-white"
             >
-              lumar.email
+              lumar.agency
             </a>
           </p>
         </div>
