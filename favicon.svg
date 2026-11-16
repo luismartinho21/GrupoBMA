@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#0B0C0E"/>
+  <polygon points="32,7 50,32 32,57 14,32" stroke="#D4B45A" stroke-width="2.5" fill="none"/>
+  <polygon points="32,12 45,32 32,52 19,32" stroke="#C9A449" stroke-width="1.5" fill="none"/>
+  <rect x="8" y="27" width="48" height="10" rx="2" fill="#C9A449"/>
+  <text x="32" y="34.5" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="7.5" fill="#0B0C0E" letter-spacing="0.8">B.M.A</text>
+</svg>
