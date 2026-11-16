@@ -1,5 +1,6 @@
 import { ChevronRight, Clock, Users, Building2, Award, MapPin } from 'lucide-react';
 import { COMPANY_INFO, METRICS } from '../data/siteData';
+import { AnimatedCounter } from './AnimatedCounter';
 
 const METRIC_ICONS = {
   experience: Clock,
@@ -26,8 +27,8 @@ export function Hero() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(201,164,73,0.12),transparent_55%)]" />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
-          {/* Pill Badge matching print */}
+        <div className="mx-auto max-w-3xl text-center animate-fade-up">
+          {/* Pill Badge */}
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#C9A449]/40 bg-[#C9A449]/10 px-5 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-[#D4B45A] backdrop-blur-md">
             <span>{COMPANY_INFO.heroBadge}</span>
           </div>
@@ -44,7 +45,7 @@ export function Hero() {
             {COMPANY_INFO.tagline}
           </p>
 
-          {/* CTA Buttons matching print */}
+          {/* CTA Buttons */}
           <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href="#simulador"
@@ -62,18 +63,27 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Metrics Grid matching print (+20, +20, 1000+, 1000+, Norte a Sul) */}
+        {/* Animated Metrics Grid */}
         <div className="mt-16 grid grid-cols-2 gap-4 border-t border-white/10 pt-10 sm:grid-cols-3 lg:grid-cols-5 lg:gap-6">
-          {METRICS.map((metric) => {
+          {METRICS.map((metric, idx) => {
             const Icon = METRIC_ICONS[metric.key];
             return (
               <div
                 key={metric.label}
-                className="flex flex-col items-center rounded-2xl border border-white/5 bg-[#141518]/70 px-4 py-5 text-center backdrop-blur-sm transition-colors hover:border-[#C9A449]/30 last:col-span-2 sm:last:col-span-1"
+                style={{ animationDelay: `${120 + idx * 90}ms` }}
+                className="animate-fade-up flex flex-col items-center rounded-2xl border border-white/5 bg-[#141518]/75 px-4 py-5 text-center backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#C9A449]/40 hover:shadow-lg hover:shadow-[#C9A449]/10 last:col-span-2 sm:last:col-span-1"
               >
-                <Icon className="h-6 w-6 text-[#D4B45A]" />
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#C9A449]/10 text-[#D4B45A]">
+                  <Icon className="h-5 w-5" />
+                </div>
                 <div className="mt-3 font-display text-2xl font-extrabold text-white sm:text-3xl">
-                  {metric.value}
+                  {metric.key === 'experience' || metric.key === 'team' ? (
+                    <AnimatedCounter target={20} prefix="+" durationMs={1200} />
+                  ) : metric.key === 'projects' || metric.key === 'clients' ? (
+                    <AnimatedCounter target={1000} suffix="+" durationMs={1800} />
+                  ) : (
+                    metric.value
+                  )}
                 </div>
                 <div className="mt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-400">
                   {metric.label}

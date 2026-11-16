@@ -1,7 +1,13 @@
 import { BrandLogo } from './BrandLogo';
 import { COMPANY_INFO } from '../data/siteData';
+import type { LegalDocType } from './LegalAndCookies';
 
-export function Footer() {
+interface FooterProps {
+  onOpenLegal: (doc: LegalDocType) => void;
+  onOpenCookies: () => void;
+}
+
+export function Footer({ onOpenLegal, onOpenCookies }: FooterProps) {
   const year = new Date().getFullYear();
 
   return (
@@ -34,12 +40,52 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 flex flex-col justify-between gap-4 border-t border-white/10 pt-8 text-xs text-zinc-500 sm:flex-row sm:items-center">
+        {/* Legal & Privacy Links */}
+        <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-white/10 pt-6 text-xs text-zinc-400">
+          <button
+            type="button"
+            onClick={() => onOpenLegal('privacy')}
+            className="hover:text-[#D4B45A] transition-colors"
+          >
+            Política de Privacidade
+          </button>
+          <button
+            type="button"
+            onClick={() => onOpenLegal('cookies')}
+            className="hover:text-[#D4B45A] transition-colors"
+          >
+            Política de Cookies
+          </button>
+          <button
+            type="button"
+            onClick={() => onOpenLegal('terms')}
+            className="hover:text-[#D4B45A] transition-colors"
+          >
+            Termos e Direitos
+          </button>
+          <button
+            type="button"
+            onClick={onOpenCookies}
+            className="hover:text-[#D4B45A] transition-colors"
+          >
+            Gerir Cookies
+          </button>
+        </div>
+
+        <div className="mt-5 flex flex-col justify-between gap-3 border-t border-white/5 pt-6 text-xs text-zinc-500 sm:flex-row sm:items-center">
           <p>
             © {year} {COMPANY_INFO.name} Todos os direitos reservados.
           </p>
           <p>
-            Construção Civil • Remodelações Interiores e Exteriores • Reabilitação • Armazéns
+            Direitos reservados de{' '}
+            <a
+              href="https://lumar.email"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-[#D4B45A] underline decoration-[#D4B45A]/40 underline-offset-4 transition-colors hover:text-white"
+            >
+              lumar.email
+            </a>
           </p>
         </div>
       </div>
