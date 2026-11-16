@@ -25,8 +25,8 @@ export function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#0B0C0E]/95 backdrop-blur-md border-b border-[#C9A449]/20 shadow-2xl py-3'
-          : 'bg-gradient-to-b from-[#0B0C0E]/90 to-transparent py-5'
+          ? 'bg-[#1E1510]/95 backdrop-blur-md border-b border-[#C88A4B]/30 shadow-xl py-3'
+          : 'bg-gradient-to-b from-[#1E1510]/85 to-transparent py-5'
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -40,7 +40,7 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-zinc-300 transition-colors hover:text-[#D4B45A]"
+              className="text-sm font-medium text-[#F6EFE6]/90 transition-colors hover:text-[#E5B869]"
             >
               {link.label}
             </a>
@@ -51,14 +51,14 @@ export function Navbar() {
         <div className="hidden items-center gap-5 lg:flex">
           <a
             href={COMPANY_INFO.phoneHref}
-            className="flex items-center gap-2 text-sm font-semibold text-zinc-200 hover:text-[#D4B45A] transition-colors"
+            className="flex items-center gap-2 text-sm font-semibold text-[#F6EFE6] hover:text-[#E5B869] transition-colors"
           >
-            <Phone className="h-4 w-4 text-[#D4B45A]" />
+            <Phone className="h-4 w-4 text-[#E5B869]" />
             <span>{COMPANY_INFO.phoneDisplay}</span>
           </a>
           <a
             href="#simulador"
-            className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-[#C9A449] to-[#B08A32] px-4 py-2.5 text-sm font-bold text-[#0B0C0E] shadow-lg shadow-[#C9A449]/15 transition-all hover:brightness-110 active:scale-[0.98]"
+            className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-[#D4A359] to-[#B57436] px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-[#B57436]/25 transition-all hover:brightness-110 active:scale-[0.98]"
           >
             <span>Simular Pré-Orçamento</span>
             <ChevronRight className="h-4 w-4" />
@@ -69,7 +69,7 @@ export function Navbar() {
         <button
           type="button"
           onClick={() => setMobileOpen((prev) => !prev)}
-          className="inline-flex items-center justify-center rounded-lg p-2 text-zinc-200 hover:bg-white/10 lg:hidden"
+          className="inline-flex items-center justify-center rounded-lg p-2 text-[#F6EFE6] hover:bg-white/10 lg:hidden"
           aria-label="Abrir menu"
         >
           {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -78,14 +78,14 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="border-t border-white/10 bg-[#0B0C0E] px-4 py-5 lg:hidden">
+        <div className="border-t border-white/10 bg-[#1E1510] px-4 py-5 lg:hidden">
           <nav className="flex flex-col gap-2">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="rounded-lg px-3 py-2.5 text-base font-medium text-zinc-200 hover:bg-white/5 hover:text-[#D4B45A]"
+                className="rounded-lg px-3 py-2.5 text-base font-medium text-[#F6EFE6] hover:bg-white/5 hover:text-[#E5B869]"
               >
                 {link.label}
               </a>
@@ -95,13 +95,13 @@ export function Navbar() {
                 href={COMPANY_INFO.phoneHref}
                 className="flex items-center justify-center gap-2 rounded-xl border border-white/15 py-2.5 text-sm font-semibold text-white"
               >
-                <Phone className="h-4 w-4 text-[#D4B45A]" />
+                <Phone className="h-4 w-4 text-[#E5B869]" />
                 {COMPANY_INFO.phoneDisplay}
               </a>
               <a
                 href="#simulador"
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-[#C9A449] to-[#B08A32] py-2.5 text-sm font-bold text-[#0B0C0E]"
+                className="flex items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-[#D4A359] to-[#B57436] py-2.5 text-sm font-bold text-white"
               >
                 Simular Pré-Orçamento
                 <ChevronRight className="h-4 w-4" />

@@ -14,7 +14,7 @@ export function App() {
   const [forceOpenCookies, setForceOpenCookies] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#0B0C0E] text-white">
+    <div className="min-h-screen bg-[#F6EFE6] text-[#1E1510]">
       <Navbar />
       <main>
         <Hero />

@@ -46,23 +46,23 @@ export function CookieBanner({ onOpenLegal, forceOpen, onCloseForce }: CookieBan
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-50 p-4 sm:p-6 pointer-events-none">
-      <div className="mx-auto max-w-4xl pointer-events-auto rounded-2xl border border-[#C9A449]/35 bg-[#141518]/95 p-5 sm:p-6 shadow-2xl backdrop-blur-md">
+      <div className="mx-auto max-w-4xl pointer-events-auto rounded-2xl border border-[#C88A4B]/45 bg-[#1E1510]/95 p-5 sm:p-6 shadow-2xl backdrop-blur-md">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div className="flex items-start gap-3.5">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#C9A449]/15 text-[#D4B45A]">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#C88A4B]/20 text-[#E5B869]">
               <Cookie className="h-5 w-5" />
             </div>
             <div>
-              <h3 className="font-display text-sm font-bold text-white sm:text-base">
+              <h3 className="font-display text-sm font-bold text-[#FFFBF6] sm:text-base">
                 Cookies &amp; Privacidade (RGPD)
               </h3>
-              <p className="mt-1 text-xs leading-relaxed text-zinc-300 sm:text-sm">
+              <p className="mt-1 text-xs leading-relaxed text-[#EFE4D6] sm:text-sm">
                 Utilizamos cookies essenciais para o funcionamento do site e cookies analíticos
                 opcionais para melhorar a sua experiência. Consulte a nossa{' '}
                 <button
                   type="button"
                   onClick={() => onOpenLegal('privacy')}
-                  className="font-semibold text-[#D4B45A] underline hover:text-white"
+                  className="font-semibold text-[#E5B869] underline hover:text-white"
                 >
                   Política de Privacidade
                 </button>{' '}
@@ -70,7 +70,7 @@ export function CookieBanner({ onOpenLegal, forceOpen, onCloseForce }: CookieBan
                 <button
                   type="button"
                   onClick={() => onOpenLegal('cookies')}
-                  className="font-semibold text-[#D4B45A] underline hover:text-white"
+                  className="font-semibold text-[#E5B869] underline hover:text-white"
                 >
                   Política de Cookies
                 </button>
@@ -146,7 +146,7 @@ export function CookieBanner({ onOpenLegal, forceOpen, onCloseForce }: CookieBan
           <button
             type="button"
             onClick={() => saveConsent(true)}
-            className="rounded-xl bg-gradient-to-r from-[#C9A449] to-[#B08A32] px-5 py-2 text-xs font-bold text-[#0B0C0E] hover:brightness-110"
+            className="rounded-xl bg-gradient-to-r from-[#D4A359] to-[#B57436] px-5 py-2 text-xs font-bold text-white hover:brightness-110"
           >
             Aceitar Todos
           </button>
